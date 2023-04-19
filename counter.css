@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'tiltprism';
+    src: url('assets/fonts/tiltprism-regular-variablefont_xrotyrot-webfont.woff2') format('woff2'),url('assets/fonts/tiltprism-regular-variablefont_xrotyrot-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'type2';
+    src: url('assets/fonts/rubikwetpaint-regular-webfont.woff2') format('woff2'), url('assets/fonts/rubikwetpaint-regular-webfont.woff') format('woff');
+}
+body{
+    background-color: linear-gradient(to bottom,rgb(110, 110, 110),rgb(143, 143, 143));
+}
+.headee{
+    animation: comeinside 3s ;
+}
+@keyframes comeinside {
+    0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+}
+.game{
+    background-image: url("https://img.freepik.com/premium-vector/blue-brick-wall-texture-seamless-illustration-stones-wall-seamless-pattern_172107-931.jpg");
+    background-position: center;
+    margin: 0px;
+    color: rgba(240, 248, 255, 0);
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    font-family: 'tiltprism';
+}
+#begin{
+    background-color: rgba(0, 0, 0, 0);
+    height: 9vh;
+    width: 12vw;
+    border: 0;
+    font-size: 5rem;
+    color: aliceblue;
+    font-family:'Courier New', Courier, monospace;
+}
+#begin:hover{
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#inc,#reset,#dec{
+    background-color: rgba(240, 248, 255, 0);
+    color: rgba(240, 248, 255, 0);
+    border: 0px;
+    display: none;
+    scale: 1.5;
+    
+
+}
+.animate{
+    animation: fade .5s ease-out;
+}
+@keyframes fade {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+#inc:hover,#dec:hover,#reset:hover{
+border: 2px solid black;
+}
+
+@media screen and (max-width: 960px) {
+.game{
+    background-size: 720px 685px;
+}
+}
+@media screen and (max-width: 720px) {
+.game{
+        background-size: 480px 462px;
+}
+    }
+@media screen and (max-width: 488px) {
+.game{
+        background-size: 320px 332px;
+}
+    }
+/*<img id="police" src="https://o.remove.bg/downloads/5efe67c3-7f2c-40c2-b981-51d3ddd3190a/image-removebg-preview.png" alt="police">*/
+.points{
+    font-family: 'Times New Roman', Times, serif;
+}
+#restart{
+    margin-top: 2vh;
+    margin-right: 1vh;
+    color: black;
+    background-color: rgba(0, 0, 0, 0);
+    height: 6vh;
+    width: 8vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: none;
+    border: 0;
+}
+#restart:hover{
+    color: rgb(0, 0, 0);
+    font-family:'Courier New', Courier, monospace;
+    border: 2px solid black;
+}
+.cursor{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border: 3px solid black;
+    border-radius: 50%;
+    background-color: rgba(240, 248, 255, 0);
+    z-index: 0;
+    pointer-events: none;
+    transition-duration: 150ms ;
+    transition-timing-function: ease-out;
+    animation: cursorAnim1 .5s   infinite alternate ;
+    font-size: 2.9rem;
+    font-weight: 900;
+    
+}
+@keyframes cursorAnim1 {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(.7);
+    }
+}
+.cursor::after {
+
+    content: "";
+    width:40px;
+    height:40px;
+    position: absolute;
+    border: 6.5px solid red;
+    border-radius: 50%;
+    opacity: .5;
+    top: -2.75px;
+    left: -2.75px;
+    pointer-events: none;
+    z-index: 0;
+    animation: cursorAnim2 .75s   infinite alternate  ;
+
+}
+@keyframes cursorAnim2 {
+    from{
+        transform: scale(1.6);
+
+    }
+    to{
+        transform: scale(0.9);
+    }
+}
+.expand{
+    animation : cursorAnim3 .8s forwards;
+    border: 10px solid gray;
+}
+@keyframes cursorAnim3 {
+    0%{
+        transform: scale(1);
+
+    }
+    50%{
+        transform: scale(4);
+
+    }
+    100%{
+        transform: scale(1);
+        opacity:0;
+
+    }
+}
+*{
+    cursor:none;
+    font-family: 'type2';
+    font-weight: bold;
+    overflow: hidden;
+}
+.green {
+    color: green;
+    font-family: 'tiltprism';
+    font-size: 3rem;
+}
+.red{
+    color: red;
+    font-family: 'tiltprism';
+    font-size: 3rem;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="counter.js"></script>
+<link rel="stylesheet" href="counter.css">    
+<title>COUNTER</title>
+</head>
+<body>
+  <div class="headee">
+  <div class="text-right"><button id="restart">Restart</button></div>
+  <div class="text-center"><h1>SHOOT AND I'LL HELP YOU RELOAD</h1><div class="text-center"><h3>SHOOT THEIF = +1 POINT /-\ SHOOT POLICE = -1 POINT</h3></div><div class="text-center"><h3><span class="points"></span></h3><br></div>
+  <h6><span class="points"></span></h6></div>
+  </div>
+  <div class="game">
+    <button class="button1" type="button" onclick="
+    document.getElementById('inc').style.display='block';
+    document.getElementById('dec').style.display='block';
+    document.getElementById('restart').style.display='block';
+    document.getElementById('begin').style.display='none';" id="begin">START</button>
+    <button class="button"  type="button" id="inc"><img id="police" src="theif.png" style="height: 12.5vh;" alt="police" ></button>
+    <button class="button"  type="button" id="dec"><img  src="countw.png" style="height: 12.5vh;" alt="police"></button>
+    <button class="button"  type="button" id="inc"><img id="police" src="theif.png" style="height: 12.5vh;" alt="police" ></button>
+    <button class="button"  type="button" id="dec"><img  src="countw.png" style="height: 12.5vh;" alt="police"></button>
+  </div>
+  <div class="cursor"><div class="text-center">+</div>
+
+  <script>
+    var c =0;
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove',e=> {
+      console.log(e);
+      cursor.setAttribute("style","top :"+(e.pageY-15)+"px; left :"+ (e.pageX-15)+"px;")
+    });
+    document.addEventListener('click', function(event){
+      
+      console.log(event);
+      var img = document.createElement('img');
+      img.setAttribute('src', 'assets/blood-spot.png');
+      img.setAttribute('style', 'position: absolute; left: ' + (event.clientX - 110) + 'px; top: ' + (event.clientY - 104) + 'px; transform: scale(0.25);');
+      document.body.appendChild(img);
+      cursor.classList.add("expand");
+      c=c+1;
+
+
+      setTimeout(()=> {
+        cursor.classList.remove("expand");
+      },500)
+
+      setTimeout(function() {
+      img.parentNode.removeChild(img);
+      }, 300);
+
+    });
+
+  </script>
+  
+</body>
+</html>
