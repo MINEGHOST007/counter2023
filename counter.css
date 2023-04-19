@@ -103,7 +103,6 @@ border: 2px solid black;
 #restart:hover{
     color: rgb(0, 0, 0);
     font-family:'Courier New', Courier, monospace;
-    border: 2px solid black;
 }
 .cursor{
     position: absolute;
