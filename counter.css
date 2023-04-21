@@ -53,7 +53,9 @@ body{
     display: none;
     scale: 1.5;
     user-select: none;
-    
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 
 }
 .animate{
