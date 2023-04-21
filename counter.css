@@ -52,6 +52,7 @@ body{
     border: 0px;
     display: none;
     scale: 1.5;
+    user-select: none;
     
 
 }
