@@ -58,6 +58,13 @@ body{
   -ms-user-select: none;
 
 }
+#inc,#reset,#dec img{
+    user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+}
 .animate{
     animation: fade .5s ease-out;
 }
